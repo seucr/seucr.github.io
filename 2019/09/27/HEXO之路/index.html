@@ -74,18 +74,20 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="喵托邦" type="application/atom+xml">
 
 
 
 
 
-<meta name="description" content="​最近查找资料时，看到很多漂亮的博客，拉到最下面都有一行小字：  powered by HEXO  ​恰好有闲暇不务正业，于是就有了这个站点的诞生。本文记录了站点的搭建过程，算是它出生过程的全记录吧。 Overview​HEXO是一个部署在npm上的package，提供了基于Markdown进行blog站点开发的框架。 ​没有搞过前端开发的人（e.g：我）看了这句话简直是黑人问号脸。慢慢来说：">
+
+<meta name="description" content="最近查找资料时，看到很多漂亮的博客，拉到最下面都有一行小字：  powered by HEXO  恰好有闲暇不务正业，于是就有了这个站点的诞生。本文记录了站点的搭建过程，算是它出生过程的全记录吧。 OverviewHEXO是一个部署在npm上的package，提供了基于Markdown进行blog站点开发的框架。 没有搞过前端开发的人（e.g：我）看了这句话简直是黑人问号脸。慢慢来说：  网站开发">
 <meta name="keywords" content="技术,前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HEXO之路">
 <meta property="og:url" content="https://seucr.github.io/2019/09/27/HEXO之路/index.html">
 <meta property="og:site_name" content="喵托邦">
-<meta property="og:description" content="​最近查找资料时，看到很多漂亮的博客，拉到最下面都有一行小字：  powered by HEXO  ​恰好有闲暇不务正业，于是就有了这个站点的诞生。本文记录了站点的搭建过程，算是它出生过程的全记录吧。 Overview​HEXO是一个部署在npm上的package，提供了基于Markdown进行blog站点开发的框架。 ​没有搞过前端开发的人（e.g：我）看了这句话简直是黑人问号脸。慢慢来说：">
+<meta property="og:description" content="最近查找资料时，看到很多漂亮的博客，拉到最下面都有一行小字：  powered by HEXO  恰好有闲暇不务正业，于是就有了这个站点的诞生。本文记录了站点的搭建过程，算是它出生过程的全记录吧。 OverviewHEXO是一个部署在npm上的package，提供了基于Markdown进行blog站点开发的框架。 没有搞过前端开发的人（e.g：我）看了这句话简直是黑人问号脸。慢慢来说：  网站开发">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://seucr.github.io/2019/09/27/HEXO之路/landscape_foresee.png">
 <meta property="og:image" content="https://seucr.github.io/2019/09/27/HEXO之路/github_sshkey.png">
@@ -93,10 +95,10 @@
 <meta property="og:image" content="https://seucr.github.io/2019/09/27/HEXO之路/config_yml_deploy.png">
 <meta property="og:image" content="https://seucr.github.io/2019/09/27/HEXO之路/sublime.png">
 <meta property="og:image" content="https://seucr.github.io/2019/09/27/HEXO之路/typora.png">
-<meta property="og:updated_time" content="2019-09-29T05:48:01.698Z">
+<meta property="og:updated_time" content="2019-09-29T10:44:03.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HEXO之路">
-<meta name="twitter:description" content="​最近查找资料时，看到很多漂亮的博客，拉到最下面都有一行小字：  powered by HEXO  ​恰好有闲暇不务正业，于是就有了这个站点的诞生。本文记录了站点的搭建过程，算是它出生过程的全记录吧。 Overview​HEXO是一个部署在npm上的package，提供了基于Markdown进行blog站点开发的框架。 ​没有搞过前端开发的人（e.g：我）看了这句话简直是黑人问号脸。慢慢来说：">
+<meta name="twitter:description" content="最近查找资料时，看到很多漂亮的博客，拉到最下面都有一行小字：  powered by HEXO  恰好有闲暇不务正业，于是就有了这个站点的诞生。本文记录了站点的搭建过程，算是它出生过程的全记录吧。 OverviewHEXO是一个部署在npm上的package，提供了基于Markdown进行blog站点开发的框架。 没有搞过前端开发的人（e.g：我）看了这句话简直是黑人问号脸。慢慢来说：  网站开发">
 <meta name="twitter:image" content="https://seucr.github.io/2019/09/27/HEXO之路/landscape_foresee.png">
 
 
@@ -116,9 +118,9 @@
       author: '博主'
     },
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'ZYS0AP6GE9',
+      apiKey: 'c7bf8a3dbfcc1d63844860ad922f1075',
+      indexName: 'seucr.github.io',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -239,9 +241,47 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -337,13 +377,13 @@
       
 
       
-        <p>​最近查找资料时，看到很多漂亮的博客，拉到最下面都有一行小字：</p>
+        <p>最近查找资料时，看到很多漂亮的博客，拉到最下面都有一行小字：</p>
 <blockquote>
 <p><letf>powered by HEXO</letf></p>
 </blockquote>
-<p>​恰好有闲暇不务正业，于是就有了这个站点的诞生。本文记录了站点的搭建过程，算是它出生过程的全记录吧。</p>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>​HEXO是一个部署在npm上的package，提供了基于Markdown进行blog站点开发的框架。</p>
-<p>​没有搞过前端开发的人（e.g：我）看了这句话简直是黑人问号脸。慢慢来说：</p>
+<p>恰好有闲暇不务正业，于是就有了这个站点的诞生。本文记录了站点的搭建过程，算是它出生过程的全记录吧。</p>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>HEXO是一个部署在npm上的package，提供了基于Markdown进行blog站点开发的框架。</p>
+<p>没有搞过前端开发的人（e.g：我）看了这句话简直是黑人问号脸。慢慢来说：</p>
 <ul>
 <li><strong>网站开发</strong></li>
 </ul>
@@ -373,7 +413,7 @@
 </ul>
 <p>HEXO是托管在npm网站的一个package，它提供了一个博客框架，可以利用Markdown语言编写博客并搭建站点；支持将博客站点部署在github上，从而能让所有人看到。</p>
 <p>HEXO层次划分很清晰。支持各种插件，支持自定义主题，在其官网可以下到大量官方插件和主题。因为代码是全开源，所以任何人也都可以自行定制插件、主题。</p>
-<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><p>​安装环境是<strong>Windows 7 SP1</strong> 。</p>
+<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><p>安装环境是<strong>Windows 7 SP1</strong> 。</p>
 <h2 id="nodejs-amp-npm"><a href="#nodejs-amp-npm" class="headerlink" title="nodejs &amp; npm"></a>nodejs &amp; npm</h2><ol>
 <li><p>下载<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">nodejs安装包</a>，并安装。现在nodejs里默认集成了npm，无需另行安装。</p>
 </li>
@@ -424,7 +464,7 @@
 
 <h2 id="更多功能"><a href="#更多功能" class="headerlink" title="更多功能"></a>更多功能</h2><p>前端的开发都站在基于他人的肩上来做的，而不要重复制作轮子。</p>
 <p>官网插件里有很多插件可供选择，有不少有用的（比如允许用户评论、统计站点流量等），也有不少好玩的（比如爬douban的书影音、IMdB资料等）。</p>
-<p>装上插件、配上心仪的主题之后，即便是本地站点，也变得很好玩。</p>
+<p>装上插件、配上心仪的主题之后，即便是本地站点，也变得很好玩。在后面我会把本站用到的插件罗列一二。</p>
 <h1 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h1><p>如果想让博客被更多人看到，就需要部署HEXO站点。</p>
 <p>HEXO支持将站点托管的github上，这样所有人都可以通过github提供的域名访问到站点。如果土豪可以自己注册一个域名，那就有了一个十分个性化博客站了。</p>
 <h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><p>github都是SSH加密通讯的，需要先装一个SSH环境，可以到<a href="https://www.mls-software.com/opensshd.html" target="_blank" rel="noopener">这个地址</a>下载安装。</p>
@@ -485,9 +525,43 @@
 
 </li>
 </ol>
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><h2 id="Algolia"><a href="#Algolia" class="headerlink" title="Algolia"></a>Algolia</h2><p>Algolia提供站内搜索服务，优点是免费，而且不需要绑定大陆信息；缺点是，NexT目前默认只能支持Algolia搜索Post标题和Page，内容无法搜索。</p>
+<p>新版本的NexT主题已经集成了Algolia的支持，不过仍有一些小动作需要完成。大致的过程可以参考<a href="http://theme-next.iissnan.com/third-party-services.html#algolia-search" target="_blank" rel="noopener">这里</a>，不过这个说明似乎比较旧，所以update如下：</p>
+<ol>
+<li><p>注册<a href="https://www.algolia.com" target="_blank" rel="noopener">Algolia</a>，创建Index。Index Name可以自由选择。</p>
+</li>
+<li><p>本地安装Algolia</p>
+<blockquote>
+<p>npm install –save hexo-algolia</p>
+</blockquote>
+</li>
+<li><p>添加Key权限。在”API Keys” - “All API Keys” 里，编辑Usage API Key，添加Operation权限“AddObject”、”DeleteObject”、”listIndexes”、”deleteIndex”。</p>
+</li>
+<li><p>（下面开始就和教程不同了）在Windows cmd.exe下进入站点目录，执行：</p>
+<blockquote>
+<p>set HEXO_ALGOLIA_INDEXING_KEY=<strong>$(ADMIN API Key)</strong></p>
+<p>hexo algolia</p>
+</blockquote>
+<p>如果成功，这时进入Algoria控制台 - “Indices” - “Browse”里，应该可以看到所有Post/Page信息，注意，是没有Post的正文信息的，所以无法搜索Post正文。</p>
+</li>
+<li><p>修改NexT<strong>站点配置文件</strong>，添加如下内容，其中信息都在Algoria控制台 - “API Keys”里能够找到：</p>
+<blockquote>
+<p>algolia:<br>  applicationID: ‘$(applicationID)’<br>  apiKey: ‘$(Search-Only_API_Key)’<br>  adminApiKey: ‘$(Admin_API_Key)’<br>  indexName: ‘$(Index_name)’<br>  chunkSize: 5000</p>
+</blockquote>
+</li>
+<li><p>修改<strong>NexT主题</strong>配置文件，修改如下两处</p>
+<blockquote>
+<p>algolia_search:<br>  enable: <strong>true</strong></p>
+<p>local_search:<br>  enable: <strong>true</strong></p>
+</blockquote>
+</li>
+<li><p>此时重启站点，就可以看到侧边栏里的“搜索”字样了，点开后会弹出搜索框。</p>
+</li>
+</ol>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
 <li><a href="https://hexo.io/" target="_blank" rel="noopener">https://hexo.io</a></li>
 <li><a href="https://www.cnblogs.com/trista222/p/8017300.html" target="_blank" rel="noopener">https://www.cnblogs.com/trista222/p/8017300.html</a></li>
+<li><a href="https://www.jianshu.com/p/fa2354d61e37" target="_blank" rel="noopener">https://www.jianshu.com/p/fa2354d61e37</a></li>
 </ol>
 
       
@@ -630,6 +704,13 @@
           </nav>
 
           
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
 
           
             <div class="links-of-author motion-element">
@@ -670,7 +751,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境搭建"><span class="nav-number">2.</span> <span class="nav-text">环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nodejs-amp-npm"><span class="nav-number">2.1.</span> <span class="nav-text">nodejs &amp; npm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git"><span class="nav-number">2.2.</span> <span class="nav-text">git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HEXO"><span class="nav-number">2.3.</span> <span class="nav-text">HEXO</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地HEXO站点"><span class="nav-number">3.</span> <span class="nav-text">本地HEXO站点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本操作"><span class="nav-number">3.1.</span> <span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#美化"><span class="nav-number">3.2.</span> <span class="nav-text">美化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多功能"><span class="nav-number">3.3.</span> <span class="nav-text">更多功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署到github"><span class="nav-number">4.</span> <span class="nav-text">部署到github</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH"><span class="nav-number">4.1.</span> <span class="nav-text">SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github"><span class="nav-number">4.2.</span> <span class="nav-text">github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署"><span class="nav-number">4.3.</span> <span class="nav-text">部署</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发工具"><span class="nav-number">5.</span> <span class="nav-text">开发工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境搭建"><span class="nav-number">2.</span> <span class="nav-text">环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nodejs-amp-npm"><span class="nav-number">2.1.</span> <span class="nav-text">nodejs &amp; npm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git"><span class="nav-number">2.2.</span> <span class="nav-text">git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HEXO"><span class="nav-number">2.3.</span> <span class="nav-text">HEXO</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地HEXO站点"><span class="nav-number">3.</span> <span class="nav-text">本地HEXO站点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本操作"><span class="nav-number">3.1.</span> <span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#美化"><span class="nav-number">3.2.</span> <span class="nav-text">美化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多功能"><span class="nav-number">3.3.</span> <span class="nav-text">更多功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署到github"><span class="nav-number">4.</span> <span class="nav-text">部署到github</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH"><span class="nav-number">4.1.</span> <span class="nav-text">SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github"><span class="nav-number">4.2.</span> <span class="nav-text">github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署"><span class="nav-number">4.3.</span> <span class="nav-text">部署</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发工具"><span class="nav-number">5.</span> <span class="nav-text">开发工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件"><span class="nav-number">6.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Algolia"><span class="nav-number">6.1.</span> <span class="nav-text">Algolia</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">7.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
@@ -863,7 +944,337 @@
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
 
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 
