@@ -262,6 +262,134 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://seucr.github.io/2019/09/29/写在前面——关于博客/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Patrick Cai">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="喵托邦">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/29/写在前面——关于博客/" itemprop="url">写在前面——关于博客</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T13:15:45+08:00">
+                2019-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          对博客的理解看过一个HEXO Theme 3-hexo的作者主页的话，也正是这段话，让我下决心创建自己的博客。
+
+我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/29/写在前面——关于博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://seucr.github.io/2019/09/27/HEXO之路/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -333,158 +461,20 @@
       
         
           
-            <p>​    最近查找资料时，看到很多漂亮的博客，拉到最下面都有一行小字：</p>
-<blockquote>
-<p><letf>powered by HEXO</letf></p>
-</blockquote>
-<p>​    恰好有闲暇不务正业，于是就有了这个站点的诞生。本文记录了站点的搭建过程，算是它出生过程的全记录吧。</p>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>​    HEXO是一个部署在npm上的package，提供了基于Markdown进行blog站点开发的框架。</p>
-<p>​    没有搞过前端开发的人（e.g：我）看了这句话简直是黑人问号脸。慢慢来说：</p>
-<ul>
-<li><p><strong>网站开发</strong></p>
-<p>目前的网页一般都是HTML/JS/CSS的文件集合，浏览器依据这些文件渲染出可见的网页。</p>
-<p>不过随着网页美观要求越来越高、人又越来越懒，直接写HTML/CSS做网页更费劲了，特别是各种tag的语法很不友好。例如，写一个简单的HTML标题需要这样写，tag还得匹配出现。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    This is a header</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">br</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          ​最近查找资料时，看到很多漂亮的博客，拉到最下面都有一行小字：
 
-<p>于是就有了Markdown的诞生。它对一个标题的写法简单多了：</p>
-<blockquote>
-<p># This is a header</p>
-</blockquote>
-</li>
-<li><p><strong>Markdown语言</strong></p>
-<p>如果把HTML叫做机器语言，那么Markdown语言就是介于人类语言和机器语言之间的存在。它不会取代HTML，只是为了让人们摆脱HTML语法的地域，更加方便高效地编写网页。</p>
-<p>它的语法比HTML简单的多，而且兼容HTML的tag，还可以与HTML做语法转换。这个blog就是用Markdown语言写的。</p>
-</li>
-<li><p><strong>nodejs &amp; npm</strong></p>
-<p>原文引用nodejs官网的描述：</p>
-<blockquote>
-<p>Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine.</p>
-</blockquote>
-<p>nodejs是一个JavaScript运行环境，而npm则是与nodejs一起运行的package manager。利用nodejs+npm，可以在本地运行第三方package，例如HEXO。</p>
-</li>
-<li><p><strong>HEXO</strong></p>
-<p>HEXO是托管在npm网站的一个package，它提供了一个博客框架，可以利用Markdown语言编写博客并搭建站点；支持将博客站点部署在github上，从而能让所有人看到。</p>
-<p>HEXO层次划分很清晰。支持各种插件，支持自定义主题，在其官网可以下到大量官方插件和主题。因为代码是全开源，所以任何人也都可以自行定制插件、主题。</p>
-</li>
-</ul>
-<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><p>​    安装环境是<strong>Windows 7 SP1</strong> 。</p>
-<h2 id="nodejs-amp-npm"><a href="#nodejs-amp-npm" class="headerlink" title="nodejs &amp; npm"></a>nodejs &amp; npm</h2><ol>
-<li><p>下载<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">nodejs安装包</a>，并安装。现在nodejs里默认集成了npm，无需另行安装。</p>
-</li>
-<li><p><strong>重新打开</strong>cmd.exe，执行以下命令，成功的话就是nodejs和npm安装成功了：</p>
-<blockquote>
-<p>C:\User&gt; node -v</p>
-<p>v10.16.3</p>
-<p>C:\User&gt; npm -v</p>
-<p>v6.9.0</p>
-</blockquote>
-</li>
-<li><p>去<a href="https://www.npmjs.com" target="_blank" rel="noopener">npm官网</a>注册一个账号，需要记住用户名、密码、邮箱三者。</p>
-</li>
-<li><p>在cmd.exe里输入下面的命令，输入用户名、密码、邮箱登录npm：</p>
-<blockquote>
-<p>npm login</p>
-</blockquote>
-<p>通过下面的命令，如果看到自己的用户名，就是登录成功了：</p>
-<blockquote>
-<p>npm whoami</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p>因为HEXO项目用git管理，所以需要安装git环境。</p>
-<p>在<a href="https://gitforwindows.org/" target="_blank" rel="noopener">git官网</a>下载安装包，安装一下就好了。</p>
-<h2 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a>HEXO</h2><p><a href="https://hexo.io/" target="_blank" rel="noopener">HEXO官网</a>有很详细的指南，参照执行，似乎英文版更好理解一些，如果有困难，可以看<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">中文版</a>。这里只是引用原文，在cmd.exe里面依次执行：</p>
-<blockquote>
-<ul>
-<li>npm install hexo-cli -g</li>
-<li>hexo init blog</li>
-<li>cd blog</li>
-<li>npm install</li>
-<li>hexo server</li>
-</ul>
-</blockquote>
-<p>如果执行hexo server后有如下回显，其实就已经可以通过<a href="http://localhost:4000的URL，本地访问HEXO博客站点了。" target="_blank" rel="noopener">http://localhost:4000的URL，本地访问HEXO博客站点了。</a></p>
-<blockquote>
-<p>INFO  Start processing<br>INFO  Hexo is running at <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> . Press Ctrl+C to stop.</p>
-</blockquote>
-<h1 id="本地HEXO站点"><a href="#本地HEXO站点" class="headerlink" title="本地HEXO站点"></a>本地HEXO站点</h1><h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p>HEXO的基本操作都可以参考<a href="https://hexo.io/docs/" target="_blank" rel="noopener">官网Doc</a>，建议看一遍各个页面的视频教程（油管视频，需代理），学起来就快多了。</p>
-<p>例如，新建博客：</p>
-<blockquote>
-<p>hexo new post “$TITLE”</p>
-</blockquote>
-<h2 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h2><p>HEXO默认使用的主题叫landscape，还算简约大方。</p>
-<p>可以在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">官网主题</a>里下载更多的主题，也可以自己做一个，如果够牛。</p>
-<img src="/2019/09/27/HEXO之路/landscape_foresee.png">
+powered by HEXO
 
-<h2 id="更多功能"><a href="#更多功能" class="headerlink" title="更多功能"></a>更多功能</h2><p>前端的开发都站在基于他人的肩上来做的，而不要重复制作轮子。</p>
-<p>官网插件里有很多插件可供选择，有不少有用的（比如允许用户评论、统计站点流量等），也有不少好玩的（比如爬douban的书影音、IMdB资料等）。</p>
-<p>装上插件、配上心仪的主题之后，即便是本地站点，也变得很好玩。</p>
-<h1 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h1><p>如果想让博客被更多人看到，就需要部署HEXO站点。</p>
-<p>HEXO支持将站点托管的github上，这样所有人都可以通过github提供的域名访问到站点。如果土豪可以自己注册一个域名，那就有了一个十分个性化博客站了。</p>
-<h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><p>github都是SSH加密通讯的，需要先装一个SSH环境，可以到<a href="https://www.mls-software.com/opensshd.html" target="_blank" rel="noopener">这个地址</a>下载安装。</p>
-<p>安装后，<strong>重启</strong>cmd.exe，就可以用ssh命令了。</p>
-<h2 id="github"><a href="#github" class="headerlink" title="github"></a>github</h2><p>还需要准备一个github仓库，这部分官网Doc写的比较绕，简而言之就是下面这几步。</p>
-<ol>
-<li><p>在github上创建一个repository，点右上角的“+”号就能看到“New Repository”。</p>
-<p>注意，这个repository的name<strong>一定</strong>要是github的username，类型<strong>一定</strong>要是Public。</p>
-</li>
-<li><p>这样过一段时间之后，就可以在”My Repository”里看到自己的仓库，并访问仓库的域名了（$username.github.io）</p>
-</li>
-<li><p>上传本地SSH public key到github</p>
-<p>在cmd.exe上执行:</p>
-<blockquote>
-<p>mkdir .ssh</p>
-<p>cd .ssh</p>
-<p>ssh-key gen -C $(github_mail_address)</p>
-</blockquote>
-<p>将.ssh/id_rsa.pub的内容贴到github的如下位置：右上角头像 - “ Setting “ - “ SSH and GPR keys”：</p>
-<img src="/2019/09/27/HEXO之路/github_sshkey.png">
-</li>
-<li><p>这时候，在cmd.exe上执行下面的命令，如果正确回显，那就OK了。</p>
-<blockquote>
-<p>ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a></p>
-<p>Hi XXXX! You’ve successfully authenticated, but GitHub does not provide shell a<br>ccess.</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>这时候离部署github就差一步了：修改hexo工程的_config.yml。</p>
-<p>有两个地方需要修改：</p>
-<ol>
-<li><p>URL：</p>
-<p>将url改成github repo的URL，如果有子目录，填写在root栏位。</p>
-<img src="/2019/09/27/HEXO之路/config_yml_url.png">
-</li>
-<li><p>Deploy：</p>
-<p>按如下格式填写，repo填写github repo的URL。</p>
-<img src="/2019/09/27/HEXO之路/config_yml_deploy.png">
-
-</li>
-</ol>
-<p>修改后，在cmd.exe上执行下面三个命令，就可以完成部署：</p>
-<blockquote>
-<p>npm install hexo-deployer-git –save</p>
-<p>hexo g</p>
-<p>hexo d</p>
-</blockquote>
-<p>到这里，通过github repo的域名<a href="https://seucr.github.io/">https://seucr.github.io</a>访问站点了。</p>
-<h1 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h1><p>个人最近觉得这两个工具开发比较顺溜。</p>
-<ol>
-<li><p>sublime text</p>
-<p>可以打开整个目录，如果是python等解释型语言，自带解释器。</p>
-<img src="/2019/09/27/HEXO之路/sublime.png">
-</li>
-<li><p>Typora</p>
-<p>连Marddown语言都不需要学了，直接用类似于Office Word的方式编辑，所见即所得。</p>
-<img src="/2019/09/27/HEXO之路/typora.png">
-
-</li>
-</ol>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
-<li><a href="https://hexo.io/" target="_blank" rel="noopener">https://hexo.io</a></li>
-<li><a href="https://www.cnblogs.com/trista222/p/8017300.html" target="_blank" rel="noopener">https://www.cnblogs.com/trista222/p/8017300.html</a></li>
-</ol>
-
-          
+​恰好有闲暇不务正业，于是就有了这个站点的诞生。本文记录了站点的搭建过程，算是它出生过程的全记录吧。
+Overview​HEXO是一个部署在npm上的package，提供了基于Markdown进行bl
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/27/HEXO之路/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -566,7 +556,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
