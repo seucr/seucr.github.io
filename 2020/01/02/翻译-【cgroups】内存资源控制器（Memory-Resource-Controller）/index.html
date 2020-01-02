@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="读书笔记,历史,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -81,18 +81,19 @@
 
 
 
-<meta name="description" content="梗概本册的时间线停留在安敦尼·庇护和马克·奥勒留之间，往前罗马帝国是亚欧非的主人，创造了辉煌的文明；再往后罗马帝国由盛而衰，步入诸神的黄昏。在这个时间点停下历史的脚步，忘记那些军事和政治的杀伐，讲一讲罗马人创造的宏伟道路，看一看罗马人的精神内在；可以说安排得十分恰当，毕竟再往后，就再也没有罗马人了。 本册着重讲述了罗马人的基础设施建设，从硬件建设和软件建设两个方面，介绍了罗马人在道路、上下水道、医">
-<meta name="keywords" content="读书笔记,历史">
+<meta name="description" content="注意： 这份文档已经严重过时并需要完全重写，不过仍然有一些有用的信息，所以我们将它保留在这里。如果想要更深入的理解，请检查当前代码。 注意： 内存资源控制器（Memory Resource Controller）在这份文档里一般被称为内存控制器（memory controller），请不要与硬件的内存控制器术语混淆。 在这份文档里： 当我们提到cgroup内存控制器时，我们叫它“memory cg">
 <meta property="og:type" content="article">
-<meta property="og:title" content="读书笔记 | 罗马人的故事X·条条大路通罗马">
-<meta property="og:url" content="https://seucr.github.io/2019/09/29/读书笔记-罗马人的故事X·条条大路通罗马/index.html">
+<meta property="og:title" content="翻译 |【cgroups】内存资源控制器（Memory Resource Controller）">
+<meta property="og:url" content="https://seucr.github.io/2020/01/02/翻译-【cgroups】内存资源控制器（Memory-Resource-Controller）/index.html">
 <meta property="og:site_name" content="异邦人之刃">
-<meta property="og:description" content="梗概本册的时间线停留在安敦尼·庇护和马克·奥勒留之间，往前罗马帝国是亚欧非的主人，创造了辉煌的文明；再往后罗马帝国由盛而衰，步入诸神的黄昏。在这个时间点停下历史的脚步，忘记那些军事和政治的杀伐，讲一讲罗马人创造的宏伟道路，看一看罗马人的精神内在；可以说安排得十分恰当，毕竟再往后，就再也没有罗马人了。 本册着重讲述了罗马人的基础设施建设，从硬件建设和软件建设两个方面，介绍了罗马人在道路、上下水道、医">
+<meta property="og:description" content="注意： 这份文档已经严重过时并需要完全重写，不过仍然有一些有用的信息，所以我们将它保留在这里。如果想要更深入的理解，请检查当前代码。 注意： 内存资源控制器（Memory Resource Controller）在这份文档里一般被称为内存控制器（memory controller），请不要与硬件的内存控制器术语混淆。 在这份文档里： 当我们提到cgroup内存控制器时，我们叫它“memory cg">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-29T06:36:47.742Z">
+<meta property="og:image" content="https://seucr.github.io/2020/01/02/翻译-【cgroups】内存资源控制器（Memory-Resource-Controller）/image-20191224131451805.png">
+<meta property="og:updated_time" content="2020-01-02T07:09:53.687Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="读书笔记 | 罗马人的故事X·条条大路通罗马">
-<meta name="twitter:description" content="梗概本册的时间线停留在安敦尼·庇护和马克·奥勒留之间，往前罗马帝国是亚欧非的主人，创造了辉煌的文明；再往后罗马帝国由盛而衰，步入诸神的黄昏。在这个时间点停下历史的脚步，忘记那些军事和政治的杀伐，讲一讲罗马人创造的宏伟道路，看一看罗马人的精神内在；可以说安排得十分恰当，毕竟再往后，就再也没有罗马人了。 本册着重讲述了罗马人的基础设施建设，从硬件建设和软件建设两个方面，介绍了罗马人在道路、上下水道、医">
+<meta name="twitter:title" content="翻译 |【cgroups】内存资源控制器（Memory Resource Controller）">
+<meta name="twitter:description" content="注意： 这份文档已经严重过时并需要完全重写，不过仍然有一些有用的信息，所以我们将它保留在这里。如果想要更深入的理解，请检查当前代码。 注意： 内存资源控制器（Memory Resource Controller）在这份文档里一般被称为内存控制器（memory controller），请不要与硬件的内存控制器术语混淆。 在这份文档里： 当我们提到cgroup内存控制器时，我们叫它“memory cg">
+<meta name="twitter:image" content="https://seucr.github.io/2020/01/02/翻译-【cgroups】内存资源控制器（Memory-Resource-Controller）/image-20191224131451805.png">
 
 
 
@@ -122,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://seucr.github.io/2019/09/29/读书笔记-罗马人的故事X·条条大路通罗马/">
+  <link rel="canonical" href="https://seucr.github.io/2020/01/02/翻译-【cgroups】内存资源控制器（Memory-Resource-Controller）/">
 
 
 
 
 
-  <title>读书笔记 | 罗马人的故事X·条条大路通罗马 | 异邦人之刃</title>
+  <title>翻译 |【cgroups】内存资源控制器（Memory Resource Controller） | 异邦人之刃</title>
   
 
 
@@ -303,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://seucr.github.io/2019/09/29/读书笔记-罗马人的故事X·条条大路通罗马/">
+    <link itemprop="mainEntityOfPage" href="https://seucr.github.io/2020/01/02/翻译-【cgroups】内存资源控制器（Memory-Resource-Controller）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Patrick Cai">
@@ -320,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">读书笔记 | 罗马人的故事X·条条大路通罗马</h1>
+          <h1 class="post-title" itemprop="name headline">翻译 |【cgroups】内存资源控制器（Memory Resource Controller）</h1>
         
 
         <div class="post-meta">
@@ -332,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T15:46:17+08:00">
-                2019-09-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-02T15:04:46+08:00">
+                2020-01-02
               </time>
             
 
@@ -370,55 +371,233 @@
       
 
       
-        <h1 id="梗概"><a href="#梗概" class="headerlink" title="梗概"></a>梗概</h1><p>本册的时间线停留在安敦尼·庇护和马克·奥勒留之间，往前罗马帝国是亚欧非的主人，创造了辉煌的文明；再往后罗马帝国由盛而衰，步入诸神的黄昏。在这个时间点停下历史的脚步，忘记那些军事和政治的杀伐，讲一讲罗马人创造的宏伟道路，看一看罗马人的精神内在；可以说安排得十分恰当，毕竟再往后，就再也没有罗马人了。</p>
-<p>本册着重讲述了罗马人的基础设施建设，从硬件建设和软件建设两个方面，介绍了罗马人在道路、上下水道、医疗、教育方面的辉煌成就，并由此突出了罗马人开放、高效、认真、灵活的民族性格。鉴于前册中也穿插介绍了各个时期的“地标式”建筑，例如图拉真记功柱等，以及同样是所谓“软件基础设施”的国家安全等内容，本册对这部分就一笔带过。</p>
-<p>本册尽管很薄，但却是全套里引用图画最多的一册，甚至开篇有很多照片彩页，展现从罗马本土到欧洲、非洲、亚洲各地罗马时期的建筑遗迹。这些遗迹即便是放在21世纪的今天，其规模也是十分震撼的，看完照片，真的很想去实地亲手摸一摸这些伟大的历史。</p>
-<h1 id="观点"><a href="#观点" class="headerlink" title="观点"></a>观点</h1><h2 id="罗马人-vs-中国人"><a href="#罗马人-vs-中国人" class="headerlink" title="罗马人 vs 中国人"></a>罗马人 vs 中国人</h2><p>本册开篇，作者就抛出了一个有意思的问题。在几乎相同的时间点（公元前三世纪），罗马人开始修筑后来遍布欧洲的道路网络，而东方的秦始皇开始修建的却是阻隔来往的后来号称万里的长城。</p>
-<blockquote>
-<p>修建长城的中国人和修筑了四通八达的道路网的罗马人的不同就在于，对于国家应该兴建什么样的大工程这件事认识不同。壁垒是断绝人的往来，而道路则是促进人的来往。那么，国家方位这一最重要的目的，是通过断绝与其他民族的来往来实现，还是通过促进本国内人民的来往来实现呢？</p>
-<p>两个民族在这一方面观念的不同，对于中国和罗马这两大古代强国来说，甚至决定了以后的国家形态。</p>
-</blockquote>
-<p>从结论看来，这个问题就十分有趣。即便是在两千多年后的今天，中国和西方的选择（尽管西方世界变成了盎格鲁-萨克逊人主导），与当时并没有什么不同：西方人创造了互联网，而我们修建了强大的Great FireWall。</p>
-<p>尽管作者抛出了合理的结论，但却没有给出问题合理的解释，即为什么会早在公元前三世纪，东西方就已经走向了两条不同的道路。作者似乎只是简单归结为民族性格不同，而要回答这个问题，可能就要写篇论文了。我也只能列出几个我想到的点。</p>
+        <p><strong>注意：</strong></p>
+<p>这份文档已经严重过时并需要完全重写，不过仍然有一些有用的信息，所以我们将它保留在这里。如果想要更深入的理解，请检查当前代码。</p>
+<p><strong>注意：</strong></p>
+<p>内存资源控制器（Memory Resource Controller）在这份文档里一般被称为内存控制器（memory controller），请不要与硬件的内存控制器术语混淆。</p>
+<p><strong>在这份文档里：</strong></p>
+<p>当我们提到cgroup内存控制器时，我们叫它“memory cgroup”。当检查git log和源代码时，patch的名字或函数名会叫做”memcg”，但在这份文档里，我们避免用这个词。</p>
+<p><strong>内存控制器的目的：</strong></p>
+<p>内存控制器将一组进程的内存行为与系统中其他进程隔离，它可以用于：</p>
 <ul>
-<li><p>民族性格不同</p>
-<p>罗马人在保留自己民族性格的同时，很早就大量继承了海洋民族希腊的思想（所以一般被称作希腊罗马时期）。</p>
-<p>在海上防御是无法建造墙壁的，只能通过灵活机动的战术、数量优势、技术优势等方法取胜；希腊人喜欢移居海外，在地中海各处都有希腊城市，如何有更方便的交通方式应该是他们一直思考的问题。继承希腊人精神的罗马人，在面对北方蛮族的时候，应该首先想到的也是如何用更加灵活机动的战术击败对手，如何将军队、后勤物资更方便地送抵各处边境。为此，罗马人选择大规模建设标准化道路，将道路复线化、网络化，让军队、后勤有更多的选择。最终达到国道约8万公里、加上私营道路总共30万公里的规模。此外，道路也是罗马“文化输出”的一个形式，通过道路连接，将战败者的土地和罗马联系在一起，缓慢同化战败者，形成命运的共同体。这样，在面对新的敌人时，原本的战败者就会和罗马人站在一起（当然，罗马人对异族开放的态度也是关键）。</p>
-<p>而秦朝起源于关中平原，地形狭长而居于秦岭和北山之间，所谓“雍州之地，崤函之固”。习惯于被群山拥抱的山地民族，似乎都更缺乏安全感，倾向于保守性格（即便是同为希腊人的斯巴达）。面对北部戎、狄等蛮族侵扰，秦朝选择在北面修筑长城，将自己圈起来免于蛮族袭击；即便秦灭六国坐拥九州，也无法摆脱“原生家庭”的影响，将秦长城扩建，一路向东，横跨整个北方。此后又历经汉、唐、宋、明多次修建、扩建，方为万里长城。</p>
-<p>关于中国人各朝各代是否有系统的修建国内道路网的记录，未做探究。</p>
-</li>
-<li><p>生存环境不同</p>
-<p>同一时期罗马人和中国人面对的对手不同，生存难易程度不同，罗马人面对的外部环境比中国人要好一些。</p>
-<p>自从共和时期罗马人从罗马城市开始扩张，依靠罗马军团，击败伊特鲁里亚人、迦太基人、高卢人、日耳曼人等等，除了汉尼拔时期的第二次布匿战争有灭国风险外，其他时期并没有长时间地与对手进行拉锯或处于下风。这一点我认为从罗马军队数量可以得到验证，即便是第二次布匿战争时期，似乎最多时候也就只有十余个罗马军团，加上辅助兵也才十几万人；而在帝政时期，需要守卫长达两三千公里的莱茵-多瑙-两河防线，竟然也只有26个军团，而同时期的罗马城人口超过百万。这就是说，罗马人只需要用极少数的精锐兵力，配合行省辅助兵，就可以完成国防任务。</p>
-<p>而同一时期的中国人（秦国人），尽管坐拥崤函之固，生存环境似乎更差。不仅需要提防东方六国的合纵，还要关注西北蛮族的动向，尽管没有研究过秦朝军力，但从商鞅变法所谓“军功制”就可以看出，秦朝需要将整个国家军事化，才能赢得生存之战。其后的汉朝面对北方的匈奴，更是有白登之围，后经文景两朝修生养息，汉武帝才将匈奴赶出漠南。</p>
-<p>由此可见，中国面临的安全形势比罗马人要严峻得多，需要依赖一些额外的手段，才能防御自己。</p>
-<p>另一个证明就是，哈德良在面对英伦北部蛮族的时候，也修建了哈德良长城；而后期罗马面对蛮族频繁的入侵，马可·奥勒留又重新修筑了罗马城墙。</p>
-<p>所以，如果单纯将修墙归结于民族缺乏安全感的敏感性格，似乎有失偏颇。缺乏安全感并不完全源自自身，外部生存环境影响也很重要。</p>
-</li>
+<li>隔离一个或一组应用。吃内存的应用可以被隔离起来，并限制一定的内存使用量。</li>
+<li>创建一个 cgroup限制其内存使用量，这可以替换boot参数mem=XXX。</li>
+<li>虚拟化技术可以用内存控制器限制某个虚拟机实例所用的内存。</li>
+<li>CD/DVD烧写器可以控制系统其他部分使用的内存，从而保证不会因为内存不足而烧写失败。</li>
+<li>还有其他一些使用场景，可以研究玩玩看（学习并hack虚拟机子系统）。</li>
 </ul>
-<h2 id="罗马人-vs-基督徒"><a href="#罗马人-vs-基督徒" class="headerlink" title="罗马人 vs 基督徒"></a>罗马人 vs 基督徒</h2><p>本册中，作者似乎一直在暗示一个观点，即罗马人是开放的而基督徒是保守的。我认为，和前面罗马人vs中国人一样，这只是不同时期的人在面对不同时期的环境时做出的选择不同，如若不是，为何基督教后来又在罗马皇帝戴克里先的主导下成为了罗马的国教呢？正统的罗马人为何没有延续下来呢？</p>
-<p>除去评判是非外，有一些观点还是值得思考的。</p>
-<h3 id="医疗和生死观"><a href="#医疗和生死观" class="headerlink" title="医疗和生死观"></a>医疗和生死观</h3><p>罗马人的生死观是豁达的：</p>
-<blockquote>
-<p>既然寿命已经，就该顺从天命。对于年轻、健壮的人负伤或者生病，要竭力治疗，而如果并没有遭遇不幸而寿命已尽，则从容升天乃是自然的生活态度。</p>
-</blockquote>
-<p>罗马人是火化的，骨灰埋葬的地方并不与世隔绝，甚至埋葬在国道旁边，配以有趣的墓志铭。</p>
-<blockquote>
-<p>风尘仆仆的旅行者可以坐在树荫下的墓地阶梯上，一边看着死者寄予生者的信息，一边休憩。在埋葬骨灰、还没有地狱概念的那个时代，生者和死者可以这样相邻共生。</p>
-</blockquote>
-<p>自从凯撒时期开始，罗马人就十分重视医生行业，给予来罗马行医的人以罗马公民权。同时大量建设浴场，每天下午的重要活动之一就是洗澡，可以想象，罗马人一定比中世纪乃至近代的欧洲人都要干净。在首都罗马，医疗甚至是公费的。</p>
-<p>相比而言，基督教的生死观似乎更加保守。有了天堂和地狱之分，人间也就分了三六九等；死后不火化，坟墓只能建在远离城市的地方；尽管教堂的医疗也是免费，但作者认为这是为了和罗马医院和神庙抢生意。</p>
-<h3 id="教育"><a href="#教育" class="headerlink" title="教育"></a>教育</h3><p>同样自凯撒时期，罗马给予在罗马的教师以罗马公民权，教师地位得到了进一步的提升。与道路建设不同，教育行业是私营而非国有（私塾开在了叫做“艾萨多拉“（街角）的地方）。这样，教师薪资可以随市场决定，教授内容也因人而异，允许不同的思想传播，</p>
-<p>而当基督教成为国教，特别是后来宣布其他宗教为异端，人类的思想反而被禁锢，迎来了被成为黑暗时代的中世纪。人类在黑暗之中逡巡不前，科学的发现、新兴的思想，往往带来的是残酷的刑罚。</p>
-<blockquote>
-<p>那些认为社会应该用一种思想来统一的人掌握权力的时候，想要实行的便是按照自己的思想重新组织教育和福利。基督教成为罗马帝国的国教以后，基督教会所做的就是这件事。半个世纪以后，罗马帝国灭亡了。留下来的是可以成为基督教帝国的拜占庭帝国。位于罗马帝国东方的雅典学院和亚历山大的博学园，不久也停办了。这是因为，怀疑是研究的根本。</p>
-</blockquote>
-<p>中世纪，大量希腊罗马时期的珍贵文献被焚毁，建筑被破坏，但讽刺的是，基督教时期的道路甚至罗马教廷的用水，还是依赖罗马时期所建。</p>
-<blockquote>
-<p>罗马教廷尽管觉得水不可或缺，却不愿意以罗马皇帝的名字给水道命名。因此，图拉真水道取圣保罗的名字改名为”保罗水道“。这条水道至今仍在台伯河西岸一带供水。</p>
-</blockquote>
-<h1 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h1><h2 id="共和精神"><a href="#共和精神" class="headerlink" title="共和精神"></a>共和精神</h2><p>在刚刚步入帝制的这最初的一百年里，其实仍有着浓重的“共和”气息，皇帝们还没有东方专制君主的味道。而正是这种共和的精神，构建了罗马的大厦，让罗马人能清醒地区分公与私，第一阶层能热情地投身公共事业、避免社会阶层收入差距过大，最终使得社会稳步前进。</p>
-<p>在修建道路、水路上，罗马人丝毫没有想收回成本，既没有过桥过路费，水费也只有专门铺设通往私宅的水路时才象征性收取，罗马人只是将这些看做统治者必须要做的事情而已。这也是最朴素的共和（publica）理念吧。</p>
+<p><strong>当前状态：</strong></p>
+<p>linux-2.6.34-mmotm(development version of 2010/April)</p>
+<p><strong>特性：</strong></p>
+<ul>
+<li>统计匿名页、file cache、swap cache使用情况并加以限制；</li>
+<li>页被关联到per-memcg的LRU上，没有全局的LRU；</li>
+<li>可选地，统计memory+swap使用情况并加以限制；</li>
+<li>层级形的（hierarchical）统计</li>
+<li>支持软件限制</li>
+<li>…</li>
+<li>使用量阈值通知</li>
+<li>内存压力通知</li>
+<li>OOM-killer和OOM-notifier</li>
+<li>根cgroup不支持限制</li>
+</ul>
+<p>目前正在开发内核内存支持，当前版本提供基本功能（见2.7节）。</p>
+<p><strong>控制文件简述：</strong></p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tasks</td>
+<td>添加一个线程并显示所有线程</td>
+</tr>
+<tr>
+<td>cgroup.procs</td>
+<td>显示进程列表</td>
+</tr>
+<tr>
+<td>cgroup.event_control</td>
+<td>event_fd()接口</td>
+</tr>
+<tr>
+<td>memory.usage_in_bytes</td>
+<td>当前内存使用量（见5.5节）</td>
+</tr>
+<tr>
+<td>memory.memsw.usage_in_bytes</td>
+<td>当前memory+swap使用量（见5.5节）</td>
+</tr>
+<tr>
+<td>memory.limit_in_bytes</td>
+<td>设置/显示内存使用量限制</td>
+</tr>
+<tr>
+<td>memory.memsw.limit_in_bytes</td>
+<td>设置/显示memory+swap使用量限制</td>
+</tr>
+<tr>
+<td>memory.failcnt</td>
+<td>显示内存使用量达到限制的次数</td>
+</tr>
+<tr>
+<td>memory.memsw.failcnt</td>
+<td>显示memory+swap使用量达到限制的次数</td>
+</tr>
+<tr>
+<td>memory.max_usage_in_bytes</td>
+<td>显示有记录以来的最大内存使用量</td>
+</tr>
+<tr>
+<td>memory.memsw.max_usage_in_bytes</td>
+<td>显示有记录以来的最大memory+swap使用量</td>
+</tr>
+<tr>
+<td>memory.soft_limit_in_bytes</td>
+<td>设置/显示内存使用量软限制阈值</td>
+</tr>
+<tr>
+<td>memory.stat</td>
+<td>显示统计值</td>
+</tr>
+<tr>
+<td>memory.use_hierarchy</td>
+<td>使用层级形统计（见第6章）</td>
+</tr>
+<tr>
+<td>memory.force_empty</td>
+<td>…</td>
+</tr>
+<tr>
+<td>memory.pressure_level</td>
+<td>设置内存压力通知</td>
+</tr>
+<tr>
+<td>memory.swappiness</td>
+<td>设置/显示vmscan swappiness参数</td>
+</tr>
+<tr>
+<td>memory.move_charge_at_immigrate</td>
+<td>…</td>
+</tr>
+<tr>
+<td>memory.oom_control</td>
+<td>设置/显示OOM控制</td>
+</tr>
+<tr>
+<td>memory.numa_stat</td>
+<td>显示per-NUMA节点的内存使用情况</td>
+</tr>
+<tr>
+<td>memory.kmem.limit_in_bytes</td>
+<td>设置/显示内核内存硬限制</td>
+</tr>
+<tr>
+<td>memory.kmem.usage_in_bytes</td>
+<td>显示当前内核分配内存</td>
+</tr>
+<tr>
+<td>memory.kmem.failcnt</td>
+<td>显示内核内存使用量达到限值的次数</td>
+</tr>
+<tr>
+<td>memory.kmem.max_usage_in_bytes</td>
+<td>显示有记录以来内核最大内存使用量</td>
+</tr>
+<tr>
+<td>memory.kmem.tcp.limit_in_bytes</td>
+<td>设置/显示tcp buf内存硬限制</td>
+</tr>
+<tr>
+<td>memory.kmem.tcp.usage_in_bytes</td>
+<td>显示当前tcp buf内存使用量</td>
+</tr>
+<tr>
+<td>memory.kmem.tcp.failcnt</td>
+<td>显示tcp buf内存使用量达到限值的次数</td>
+</tr>
+<tr>
+<td>memory.kmem.tcp.max_usage_in_bytes</td>
+<td>显示有记录以来最大tcp buf使用量</td>
+</tr>
+</tbody></table>
+<h1 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h1><p>内存控制器拥有漫长的历史，Balbir Singh发表过要求解释内存控制器的请求，那时候，发布了关于几种内存控制器实现的RFC，其目的是构建内存控制器最基本功能的共识。Balbir Singh在2007年2月发表了第一版RSS控制器，之后Pavel Emelianov发表了3个版本的RSS控制器，…大家都认为我们应当处理页缓存和RSS，还要允许用户空间处理OOM。当前内存控制器是版本6，它结合了映射的（RSS）和非映射的页缓存控制。</p>
+<h1 id="内存控制器"><a href="#内存控制器" class="headerlink" title="内存控制器"></a>内存控制器</h1><p>内存是一种独特的资源，因为它的数量有限。如果一个任务需要大量的CPU处理，任务可以将其处理分散在数小时、数天、数月或数年的时间段内，但是使用内存时，需要重用相同的物理内存来完成任务。</p>
+<p>内存控制器的实现被分成几个阶段：</p>
+<ol>
+<li>内存控制器</li>
+<li>mlock控制器</li>
+<li>内核用户内存统计和slab控制</li>
+<li>用户映射长度控制</li>
+</ol>
+<p>内存控制器是第一个开发出来的控制器。</p>
+<h2 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h2><p>内存控制器的核心是页计数器（page_counter），它追踪添加到控制器里的进程的当前内存使用情况以及使用限制，每个cgroup都有一个独立的内存控制器数据结构（mem_cgroup）。</p>
+<h2 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h2><img src="/2020/01/02/翻译-【cgroups】内存资源控制器（Memory-Resource-Controller）/image-20191224131451805.png">
+
+<p>上图显示了内存控制器的各个重要部分：</p>
+<ol>
+<li>统计是per cgroup的</li>
+<li>每个mm_struct知道它所属的cgroup</li>
+<li>每个页都有指向page_cgroup的指针，从而知道它所属的cgroup</li>
+</ol>
+<p>统计是这样达成的：</p>
+<p>mem_cgroup_charge_common()用于初始化必要的数据结构，检查当前统计的cgroup是否超出限值。如果是，cgroup会调用页回收（reclaim，更多细节请参考文本回收章节）；如果一切OK，一个页的描述数据结构page_cgroup会被更新，page_cgroup在cgroup里有自己LRU。（page_cgroup是在boot/内存热插拔阶段分配的）</p>
+<h3 id="统计细节"><a href="#统计细节" class="headerlink" title="统计细节"></a>统计细节</h3><p>所有映射的匿名页（RSS，Resident set size）和页缓存（Page Cache）都会被统计，一些永远都不会被回收或不会出现在LRU上的页不计入统计。我们只统计常规VM管理的页。</p>
+<p>RSS页在page_fault时被统计，除非它们早先已经被统计过了。一个文件页（file page）在插入inode（radix-tree）时被计入Page Cache，当它被映射（mapped）进程的页表时，已经仔细处理过，不会重复统计。</p>
+<p>一个RSS页在完全被unmapped的时候被剔除统计。当一个Page Cache的页从radix-tree中移除时，也会从统计值里 剔除。但即便RSS页已经完全unmapped（被kswapd），它已经可能存在于SwapCache里知道他们被真正释放掉。这样的SwapCaches也会被计入统计里。</p>
+<p>一个swapped-in的页不会被计入统计，直到它被映射（mapped）。</p>
+<p>在页迁移（page migration）阶段，统计信息依旧保留。</p>
+<p>注意：</p>
+<p>我们只统计LRU上的页，因为我们的目的是控制使用的页的数目；不在LRU上的页从VM的角度看不受限制。</p>
+<h2 id="共享页的统计"><a href="#共享页的统计" class="headerlink" title="共享页的统计"></a>共享页的统计</h2><p>共享页（shared page）的统计是基于第一次访问的原则：第一次访问page的cgroup统计这个页。这个原则背后的精神是，频繁访问一个共享页的cgroup最终会统计到它（一旦拥有它的cgroup不再统计它，这在内存频繁访问时会发生）。</p>
+<p>但请见8.2节：当一个任务移动到另一个cgroup时，它的页可能被新的cgroup重新统计，如果move_charge_at_immigrate被使能。</p>
+<p>例外：如果CONFIG_MEMCG_SWAP没开时：</p>
+<p>当换出（swap-off）和强制将shmem(tmpfs)页换出到后备存储器时，页的统计是由换出的调用者进行的，而非shmem的用户。</p>
+<h2 id="页交换扩展（CONFIG-MEMCG-SWAP）"><a href="#页交换扩展（CONFIG-MEMCG-SWAP）" class="headerlink" title="页交换扩展（CONFIG_MEMCG_SWAP）"></a>页交换扩展（CONFIG_MEMCG_SWAP）</h2><p>页交换扩展使得你能记录交换的页，如果可能，换入（swap-in）的页被计入旧的页分配器里。</p>
+<p>当交换页也被计入统计时，会新增如下文件：</p>
+<ul>
+<li>memory.memsw.usage_in_bytes.</li>
+<li>memory.memsw.limit_in_bytes.</li>
+</ul>
+<p>其中memsw意思是memory+swap，memory+swap的使用量限值是memsw.limit_in_bytes。</p>
+<p>例如：假设一个系统页交换阈值是4GB。在2GB内存限制下，一个任务（错误地）分配了6GB的内存会使用页交换。这是，设置memsw.limit_in_bytes=3G可以避免错误的页交换，使用这个限值，可以避免系统因为页交换引发的OOM。</p>
+<p>× 为什么是“memory+swap”而不是swap</p>
+<p>全局的LRU（kswapd）可以换出任意页，换出意味着将统计从memory移动到swap，但这对memory+swap来说并没有变化。换言之，当我们要限制限制页换出的使用而不影响全局LRU时，从OS角度看限制memory+swap比swap要好。</p>
+<p>× 当cgroup达到memory.memsw.limit_in_bytes时会发生什么？</p>
+<p>当cgroup达到memory.memsw.limit_in_bytes限值时，在cgroup的做换出没有意义。因此，cgroup不会做换出，但会清除文件缓存（file cache）。但正如上文所提，全局LRU会做内存换出，以保持系统内存管理状态的健全，cgroup不应该禁止这一点。</p>
+<h2 id="页回收（Reclaim）"><a href="#页回收（Reclaim）" class="headerlink" title="页回收（Reclaim）"></a>页回收（Reclaim）</h2><p>每个cgroup都维护了一个per-cgroup的LRU，它与全局VM是同一个数据结构。<strong>当cgroup超过限值时，我们会先尝试将cgroup中的页回收，从而为新的页腾出空间。如果页回收失败，会调用OOM并杀掉cgroup里评分最高的任务（见第10章）。</strong></p>
+<p>cgroup没有修改回收算法，除了要做回收的页来源于per-cgroup的LRU。</p>
+<p>注意：回收不适用于root cgroup，因为我们不能在root cgroup上做任何限制。</p>
+<p>注意2：当panic_on_oom=2时，整个系统会panic。</p>
+<p>当注册有OOM事件通知时，事件会被传递（见oom_control章节）</p>
+<h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><p>（略）</p>
+<h2 id="内核内存扩展（CONFIG-MEMCG-KMEM）"><a href="#内核内存扩展（CONFIG-MEMCG-KMEM）" class="headerlink" title="内核内存扩展（CONFIG_MEMCG_KMEM）"></a>内核内存扩展（CONFIG_MEMCG_KMEM）</h2><p>使用内核内存扩展支持，内存控制器可以用于限制系统内核内存使用量。内核内存与用户内存存在根本上的不同，因为它不会被换出，这使得通过消耗过多宝贵的内存资源让系统DoS成为可能。</p>
+<p>（略）</p>
+<h1 id="用户接口"><a href="#用户接口" class="headerlink" title="用户接口"></a>用户接口</h1><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>a. Enable CONFIG_CGROUPS<br>b. Enable CONFIG_MEMCG<br>c. Enable CONFIG_MEMCG_SWAP (用于swap extension)<br>d. Enable CONFIG_MEMCG_KMEM (用于kmem extension)</p>
+<h2 id="准备cgroup"><a href="#准备cgroup" class="headerlink" title="准备cgroup"></a>准备cgroup</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mount -t tmpfs none /sys/fs/cgroup</span><br><span class="line">mkdir /sys/fs/cgroup/memory</span><br><span class="line">mount -t cgroup none /sys/fs/cgroup/memory -o memory</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建新的cgroup-hierarchy，将bash移入其中"><a href="#创建新的cgroup-hierarchy，将bash移入其中" class="headerlink" title="创建新的cgroup hierarchy，将bash移入其中"></a>创建新的cgroup hierarchy，将bash移入其中</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /sys/fs/cgroup/memory/0</span><br><span class="line">echo $$ &gt; /sys/fs/cgroup/memory/0/tasks</span><br></pre></td></tr></table></figure>
+
+<p>因为我们目前在cgroup 0里，我们可以修改内存限值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 4M &gt; /sys/fs/cgroup/memory/0/memory.limit_in_bytes</span><br></pre></td></tr></table></figure>
+
+<p>注意：我们可以用后缀（k/K/m/M/g/G）来表征值单位是千/兆/吉。</p>
+<p>注意：我们可以用-1来表示无限制。</p>
+<p>注意：我们不能设置root cgroup的限值。</p>
+<p>查看限值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat /sys/fs/cgroup/memory/0/memory.limit_in_bytes</span><br><span class="line">4194304</span><br></pre></td></tr></table></figure>
+
+<p>查看当前使用量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat /sys/fs/cgroup/memory/0/memory.usage_in_bytes </span><br><span class="line">385024</span><br></pre></td></tr></table></figure>
+
+<p>成功写入该文件并不意味着设置成功限值为文件的内容，这可能源于一系列的原因，例如可能要round up到页对齐，或者是系统中所有可获取的内存限制。建议用户在设置这个值以后再重新读取文件，以确保内核收到了设置值。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo 1 &gt; memory.limit_in_bytes</span><br><span class="line">cat memory.limit_in_bytes</span><br><span class="line">4096</span><br></pre></td></tr></table></figure>
+
+<p>（<strong>注：</strong>我本地实验，echo 1 &gt; memory.limit_in_bytes会直接返回-EBUSY）</p>
+<p>memory.failcnt给出了cgroup超出限值的次数。</p>
+<p>memory.stat给出了更多统计信息，其中cache、RSS、active page、inactive page等信息都会被显示出来。</p>
 
       
     </div>
@@ -434,14 +613,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/读书笔记/" rel="tag"># 读书笔记</a>
-          
-            <a href="/tags/历史/" rel="tag"># 历史</a>
-          
-        </div>
-      
 
       
       
@@ -451,8 +622,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/27/HEXO之路/" rel="next" title="HEXO之路">
-                <i class="fa fa-chevron-left"></i> HEXO之路
+              <a href="/2020/01/02/翻译-【cgroups】进程数目控制器（Process-Number-Controller）/" rel="next" title="翻译 |【cgroups】进程数目控制器（Process Number Controller）">
+                <i class="fa fa-chevron-left"></i> 翻译 |【cgroups】进程数目控制器（Process Number Controller）
               </a>
             
           </div>
@@ -460,10 +631,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/01/02/翻译-【cgroups】CPUSETS/" rel="prev" title="翻译 |【cgroups】CPUSETS">
-                翻译 |【cgroups】CPUSETS <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -611,7 +778,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#梗概"><span class="nav-number">1.</span> <span class="nav-text">梗概</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#观点"><span class="nav-number">2.</span> <span class="nav-text">观点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#罗马人-vs-中国人"><span class="nav-number">2.1.</span> <span class="nav-text">罗马人 vs 中国人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#罗马人-vs-基督徒"><span class="nav-number">2.2.</span> <span class="nav-text">罗马人 vs 基督徒</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#医疗和生死观"><span class="nav-number">2.2.1.</span> <span class="nav-text">医疗和生死观</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#教育"><span class="nav-number">2.2.2.</span> <span class="nav-text">教育</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更多"><span class="nav-number">3.</span> <span class="nav-text">更多</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#共和精神"><span class="nav-number">3.1.</span> <span class="nav-text">共和精神</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#历史"><span class="nav-number">1.</span> <span class="nav-text">历史</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存控制器"><span class="nav-number">2.</span> <span class="nav-text">内存控制器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计"><span class="nav-number">2.1.</span> <span class="nav-text">设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计"><span class="nav-number">2.2.</span> <span class="nav-text">统计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#统计细节"><span class="nav-number">2.2.1.</span> <span class="nav-text">统计细节</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#共享页的统计"><span class="nav-number">2.3.</span> <span class="nav-text">共享页的统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页交换扩展（CONFIG-MEMCG-SWAP）"><span class="nav-number">2.4.</span> <span class="nav-text">页交换扩展（CONFIG_MEMCG_SWAP）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页回收（Reclaim）"><span class="nav-number">2.5.</span> <span class="nav-text">页回收（Reclaim）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锁"><span class="nav-number">2.6.</span> <span class="nav-text">锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内核内存扩展（CONFIG-MEMCG-KMEM）"><span class="nav-number">2.7.</span> <span class="nav-text">内核内存扩展（CONFIG_MEMCG_KMEM）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户接口"><span class="nav-number">3.</span> <span class="nav-text">用户接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">3.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备cgroup"><span class="nav-number">3.2.</span> <span class="nav-text">准备cgroup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建新的cgroup-hierarchy，将bash移入其中"><span class="nav-number">3.3.</span> <span class="nav-text">创建新的cgroup hierarchy，将bash移入其中</span></a></li></ol></li></ol></div>
             
 
           </div>

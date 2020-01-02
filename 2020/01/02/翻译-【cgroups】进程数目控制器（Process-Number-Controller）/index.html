@@ -81,16 +81,17 @@
 
 
 
-<meta name="description" content="世界的旁观者">
-<meta property="og:type" content="website">
-<meta property="og:title" content="异邦人之刃">
-<meta property="og:url" content="https://seucr.github.io/tags/技术/index.html">
+<meta name="description" content="摘要cgroup hierarchy在进程数目达到上限以后会使用 进程数量控制器（process number controller）阻止继续fork或clone任何新的进程。触发进程数量限制时是否触发PID内存限制（memory cgroup）并不重要，因为PID是基础资源，因此，在cgroup hierarchy里必须要能通过限制cgourp里进程数目来阻止PID耗尽。 使用设置最大进程数目到">
+<meta property="og:type" content="article">
+<meta property="og:title" content="翻译 |【cgroups】进程数目控制器（Process Number Controller）">
+<meta property="og:url" content="https://seucr.github.io/2020/01/02/翻译-【cgroups】进程数目控制器（Process-Number-Controller）/index.html">
 <meta property="og:site_name" content="异邦人之刃">
-<meta property="og:description" content="世界的旁观者">
+<meta property="og:description" content="摘要cgroup hierarchy在进程数目达到上限以后会使用 进程数量控制器（process number controller）阻止继续fork或clone任何新的进程。触发进程数量限制时是否触发PID内存限制（memory cgroup）并不重要，因为PID是基础资源，因此，在cgroup hierarchy里必须要能通过限制cgourp里进程数目来阻止PID耗尽。 使用设置最大进程数目到">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-01-02T06:56:23.738Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="异邦人之刃">
-<meta name="twitter:description" content="世界的旁观者">
+<meta name="twitter:title" content="翻译 |【cgroups】进程数目控制器（Process Number Controller）">
+<meta name="twitter:description" content="摘要cgroup hierarchy在进程数目达到上限以后会使用 进程数量控制器（process number controller）阻止继续fork或clone任何新的进程。触发进程数量限制时是否触发PID内存限制（memory cgroup）并不重要，因为PID是基础资源，因此，在cgroup hierarchy里必须要能通过限制cgourp里进程数目来阻止PID耗尽。 使用设置最大进程数目到">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://seucr.github.io/tags/技术/">
+  <link rel="canonical" href="https://seucr.github.io/2020/01/02/翻译-【cgroups】进程数目控制器（Process-Number-Controller）/">
 
 
 
 
 
-  <title>标签: 技术 | 异邦人之刃</title>
+  <title>翻译 |【cgroups】进程数目控制器（Process Number Controller） | 异邦人之刃</title>
   
 
 
@@ -155,7 +156,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -287,52 +288,164 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>技术<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://seucr.github.io/2020/01/02/翻译-【cgroups】进程数目控制器（Process-Number-Controller）/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Patrick Cai">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="异邦人之刃">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/09/27/HEXO之路/" itemprop="url">
-              
-                <span itemprop="name">HEXO之路</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">翻译 |【cgroups】进程数目控制器（Process Number Controller）</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-27T14:32:39+08:00" content="2019-09-27">
-          09-27
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-02T14:56:04+08:00">
+                2020-01-02
+              </time>
+            
 
-    </header>
-  </article>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>cgroup hierarchy在进程数目达到上限以后会使用 进程数量控制器（process number controller）阻止继续fork或clone任何新的进程。触发进程数量限制时是否触发PID内存限制（memory cgroup）并不重要，因为PID是基础资源，因此，在cgroup hierarchy里必须要能通过限制cgourp里进程数目来阻止PID耗尽。</p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>设置最大进程数目到pids.max文件，就可以使用进程数量控制器（显然无法获取root cgroup的该文件）。当前cgroup中进程数量保存在pids.current文件里。</p>
+<p>组织性的操作不会受到cgroup策略的限制，因此pids.current可能大于pids.max，这可以通过设置限制值小于pids.current，或添加足够的进程到cgroup从而pids.current &gt; pids.max。但是，通过fork()或clone()的方式违反cgroup策略，如果通过fork()或clone()创建新进程会违反cgroup策略，它们会返回-EAGAIN。</p>
+<p>如果不要设置cgroup的进程数量限制，设置pids.max值为“max”，这也是所有新cgroups的文件默认值。（注意，PID限制也是层级性的，最终会遵循所有hierarchy里最严格的限制）</p>
+<p>pids.current追踪所有子cgroup的层级，因此parent/pids.current是parent/child/pids.current的超集。</p>
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><p>首先，mount 进程控制器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mount -t tmpfs cgroups /sys/fs/cgroup</span><br><span class="line">mkdir -p /sys/fs/cgroup/pids</span><br><span class="line">mount -t cgroup -o pids none /sys/fs/cgroup/pids</span><br></pre></td></tr></table></figure>
+
+<p>然后，创建一个层级（hierarchy），设置限制，添加进程到里面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /sys/fs/cgroup/pids/parent/child</span><br><span class="line">echo 2 &gt; /sys/fs/cgroup/pids/parent/pids.max		//创建该hierarchy的进程数量限制：2</span><br><span class="line">echo $$ &gt; /sys/fs/cgroup/pids/parent/cgroup.procs	//将当前脚本运行时的PID加入hierarchy</span><br><span class="line">cat /sys/fs/cgroup/pids/parent/pids.current			//结果为2</span><br></pre></td></tr></table></figure>
+
+<p>注意，任何试图超过该限制的尝试都会失败：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># /bin/echo &quot;Here&apos;s some processes for you.&quot; | cat</span><br><span class="line">-/bin/sh: can&apos;t fork</span><br></pre></td></tr></table></figure>
+
+<p>即便我们移动到子进程的cgroup里（没有设置pids.max），也不会超过整个hierarychy的限制（这个例子里，是父进程的限制）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">echo $$ &gt; /sys/fs/cgroup/pids/parent/child/cgroup.procs</span><br><span class="line"># cat /sys/fs/cgroup/pids/parent/child/pids.current</span><br><span class="line">2</span><br><span class="line"># cat /sys/fs/cgroup/pids/parent/child/pids.max</span><br><span class="line">max</span><br><span class="line"># /bin/echo &quot;Here&apos;s some processes for you.&quot; | cat</span><br><span class="line">-&gt; -/bin/sh: can&apos;t fork</span><br></pre></td></tr></table></figure>
+
+<p>此外，我们可以设置一个比pids.current小的限制值，这会阻止任何通过fork创建新进程的尝试（注意，shell本身也是pids.current里的一个）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo 1 &gt; /sys/fs/cgroup/pids/parent/pids.max</span><br><span class="line"># /bin/echo &quot;We can&apos;t even spawn a single process now.&quot;</span><br><span class="line">-&gt; -/bin/sh: can&apos;t fork</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/02/翻译-【cgroups】CPUSETS/" rel="next" title="翻译 |【cgroups】CPUSETS">
+                <i class="fa fa-chevron-left"></i> 翻译 |【cgroups】CPUSETS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/02/翻译-【cgroups】内存资源控制器（Memory-Resource-Controller）/" rel="prev" title="翻译 |【cgroups】内存资源控制器（Memory Resource Controller）">
+                翻译 |【cgroups】内存资源控制器（Memory Resource Controller） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -340,6 +453,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -360,8 +477,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -437,6 +563,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例子"><span class="nav-number">3.</span> <span class="nav-text">例子</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -570,6 +712,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

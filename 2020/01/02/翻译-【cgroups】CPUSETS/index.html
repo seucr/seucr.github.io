@@ -81,16 +81,17 @@
 
 
 
-<meta name="description" content="世界的旁观者">
-<meta property="og:type" content="website">
-<meta property="og:title" content="异邦人之刃">
-<meta property="og:url" content="https://seucr.github.io/tags/技术/index.html">
+<meta name="description" content="1. Cpusets什么是cpusets？Cpusets提供了为一系列的进程指定一组CPU和内存节点（Memory Node）的机制，本文档中内存节点是指包含内存的在线节点。 Cpusets限制进程只能使用其当前cpuset中的CPU和Memory，它们在VFS中形成嵌套的层级结构，这对于大型系统动态任务分配来说是必要的。 进程通过sched_setaffinity()系统调用将CPU加入其CPU">
+<meta property="og:type" content="article">
+<meta property="og:title" content="翻译 |【cgroups】CPUSETS">
+<meta property="og:url" content="https://seucr.github.io/2020/01/02/翻译-【cgroups】CPUSETS/index.html">
 <meta property="og:site_name" content="异邦人之刃">
-<meta property="og:description" content="世界的旁观者">
+<meta property="og:description" content="1. Cpusets什么是cpusets？Cpusets提供了为一系列的进程指定一组CPU和内存节点（Memory Node）的机制，本文档中内存节点是指包含内存的在线节点。 Cpusets限制进程只能使用其当前cpuset中的CPU和Memory，它们在VFS中形成嵌套的层级结构，这对于大型系统动态任务分配来说是必要的。 进程通过sched_setaffinity()系统调用将CPU加入其CPU">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-01-02T07:04:00.493Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="异邦人之刃">
-<meta name="twitter:description" content="世界的旁观者">
+<meta name="twitter:title" content="翻译 |【cgroups】CPUSETS">
+<meta name="twitter:description" content="1. Cpusets什么是cpusets？Cpusets提供了为一系列的进程指定一组CPU和内存节点（Memory Node）的机制，本文档中内存节点是指包含内存的在线节点。 Cpusets限制进程只能使用其当前cpuset中的CPU和Memory，它们在VFS中形成嵌套的层级结构，这对于大型系统动态任务分配来说是必要的。 进程通过sched_setaffinity()系统调用将CPU加入其CPU">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://seucr.github.io/tags/技术/">
+  <link rel="canonical" href="https://seucr.github.io/2020/01/02/翻译-【cgroups】CPUSETS/">
 
 
 
 
 
-  <title>标签: 技术 | 异邦人之刃</title>
+  <title>翻译 |【cgroups】CPUSETS | 异邦人之刃</title>
   
 
 
@@ -155,7 +156,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -287,52 +288,238 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>技术<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://seucr.github.io/2020/01/02/翻译-【cgroups】CPUSETS/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Patrick Cai">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="异邦人之刃">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/09/27/HEXO之路/" itemprop="url">
-              
-                <span itemprop="name">HEXO之路</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">翻译 |【cgroups】CPUSETS</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-27T14:32:39+08:00" content="2019-09-27">
-          09-27
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-02T14:52:03+08:00">
+                2020-01-02
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-Cpusets"><a href="#1-Cpusets" class="headerlink" title="1. Cpusets"></a>1. Cpusets</h1><h2 id="什么是cpusets？"><a href="#什么是cpusets？" class="headerlink" title="什么是cpusets？"></a>什么是cpusets？</h2><p>Cpusets提供了为一系列的进程指定一组CPU和内存节点（Memory Node）的机制，本文档中内存节点是指包含内存的在线节点。</p>
+<p>Cpusets限制进程只能使用其当前cpuset中的CPU和Memory，它们在VFS中形成嵌套的层级结构，这对于大型系统动态任务分配来说是必要的。</p>
+<p>进程通过sched_setaffinity()系统调用将CPU加入其CPU mask，或通过mbind()和set_mempolicy()系统调用将内存节点加入其内存策略的请求，都会被该进程的cpuset过滤，去除任何不在该cpuset中的CPU和内存节点。调度器不会将一个进程调度到其<strong>cpus_allowed</strong>向量不允许的CPU上，内核页分配器也不会在进程<strong>mems_allowed</strong>向量不允许的内存节点上分配内存。</p>
+<p>用户层次的代码可以在cgroup虚拟文件系统中创建/删除cpuset，管理其属性和分配cpuset允许的CPU和内存节点，指定或查询进程所属的cpuset，以及罗列cpuset中所有进程pid。</p>
+<h2 id="为什么需要cpuset？"><a href="#为什么需要cpuset？" class="headerlink" title="为什么需要cpuset？"></a>为什么需要cpuset？</h2><p>拥有很多处理器（CPU）、复杂内存缓存层级和诸多NUMA内存节点的大型计算机系统，对高效调度和进程内存管理提出了新的挑战。</p>
+<p>通常小型系统只需要让操作系统在不同任务间自动共享CPU和内存资源，就可以达到足够的效能。但对于更大的系统，仔细的CPU和内存管理从而避免内存访问次数和竞争，显式地将任务安排到一组子系统上，会使得其效率更高。这对于如下系统更有价值：</p>
+<ul>
+<li>运行相同web应用多个实例的网络服务器</li>
+<li>执行不同应用的服务器（例如，一个网络服务器和一个数据库）</li>
+<li>运行高性能计算（HPC）应用的NUMA系统</li>
+</ul>
+<p>因为任务总在变化，这些子集，或“软分类”，必须要能动态调节，并且不影响其他正在执行的任务。正在执行的任务的内存页也要能随着内存位置调整而移动。</p>
+<p>内核的cpuset补丁提供了实现这种自己的最低内核机制支持，它利用Linux内核中现有的CPU和内存分配代码来避免对关键调度器或内存分配器代码的任何额外影响。</p>
+<h2 id="cpuset如何工作？"><a href="#cpuset如何工作？" class="headerlink" title="cpuset如何工作？"></a>cpuset如何工作？</h2><p>cpusets提供了一套内核机制，来限制（一组）进程使用的CPU和内存节点。</p>
+<p>内核已经提供了机制来指定某个进程可能被调度的CPU（sched_setaffinity），以及指定进程获取内存的内存节点（mbind, set_mempolicy）。cpusets扩展了这两个机制：</p>
+<ul>
+<li>cpusets是允许的CPU和内存节点的集合，能被内核感知；</li>
+<li>系统中任何进程都被绑定到一个cpuset，通过将task数据结构的指针指向一个cgroup数据结构来达成；</li>
+<li>调用sched_setaffinity()时会使用当前任务允许的CPU进行过滤；</li>
+<li>调用mbind和set_mempolicy时会使用当前任务允许的内存节点进行过滤；</li>
+<li>对于任何cpuset，可以定义一个子cpuset，包含父cpuset中CPU和内存节点的子集；</li>
+<li>cpuset的层级结构存放在/dev/cpuset里，供用户空间查看和操作；</li>
+<li>cpuset可以标记为排他的（exclusive），这可以确保其他cpuset（直接祖先和后代除外）不能包含任何重叠的cpu或内存节点。</li>
+<li>可以罗列加入到任何cpuset的所有进程pid</li>
+</ul>
+<p>cpuset的实现需要一点点简单的内核代码hook，都不在性能关键路径上：</p>
+<p>（略）</p>
+<p>需要先mount cgroup虚拟文件系统以浏览和修改cpuset。没有为cpuset新增任何系统调用，所有查询和修改都是通过cpuset的文件系统进行的。</p>
+<p>每个进程的文件<strong>/proc/&lt;pid&gt;/status</strong>中会添加数行，显示进程的cpus_allowed和mems_allowed值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cpus_allowed:   ffffffff,ffffffff,ffffffff,ffffffff</span><br><span class="line">Cpus_allowed_list:      0-127</span><br><span class="line">Mems_allowed:   ffffffff,ffffffff</span><br><span class="line">Mems_allowed_list:      0-63</span><br></pre></td></tr></table></figure>
+
+<p>（注：这里的cpus_allowed和mems_allowed是进程“全局的”配置，是一个超集。后续cpusets设置的CPU和内存节点值，都必须在cpus_allowed和mems_allowed范围内配置。）</p>
+<p>每个cpuset都在cgroup文件系统中包括如下文件：</p>
+<ul>
+<li>cpuset.cpus：cpuset里的CPU列表</li>
+<li>cpuset.mems：cpuset里的内存节点列表</li>
+<li>cpuset.memory_migrate：如置位，内存页会迁移到cpuset的内存节点</li>
+<li>cpuset.cpu_exclusive：CPU是否被cpuset独占</li>
+<li>cpuset.mem_exclusive：内存节点是否被cpuset独占</li>
+<li>cpuset.mem_hardwall：是否只能使用cpuset指定的内存节点</li>
+<li>cpuset.memory_pressure：只读，显示cpuset中进程产生的内存压力</li>
+<li>cpuset.memory_spread_page：如置位，将页缓存均匀分配到允许的内存节点</li>
+<li>cpuset.memory_spread_slab：如置位，将SLAB缓存均匀分配到允许的内存节点</li>
+<li>cpuset.sched_load_balance：如置位，cpuset允许的CPU中进行负载均衡</li>
+<li>cpuset.memory_pressure_enabled flag：是否计算内存压力（只有root cpuset有这个文件）</li>
+</ul>
+<p>可以通过mkdir()来创建新的cpusets，然后通过向上述合适的文件写值来修改该cpusets的属性，例如flag、允许的CPU和内存节点等。</p>
+<p>嵌套cpusets的命名层次结构允许将大型系统划分为嵌套的、动态可更改的“软分区”。</p>
+<p>通过将进程加入cpuset（子进程会在fork时自动继承该关联），可以将系统负载均衡的工作简化为将一组任务关联到某个限制CPU和内存节点使用的cpuset上。进程可以重新关联到另一个cpuset，只要cpuset的文件系统目录属性允许。</p>
+<p>这种“大系统”的管理与使用sched_setaffinity、mbind和set_mempolicy系统调用对单个任务和内存区域所做的详细布局平滑地集成在一起。</p>
+<p>每个cpuset都应遵循如下原则：</p>
+<ul>
+<li>它的CPU和内存节点必须是其父cpuset的子集；</li>
+<li>除非其父cpuset是exclusive的，否则无法被置为exclusive；</li>
+<li>如果它是CPU或内存节点exclusive的，他们无法与任何兄弟cpuset重叠。</li>
+</ul>
+<p>这些规则和cpuset的自然层次结构使独占保证的有效实施成为可能，而无需每次更改时扫描所有cpuset，以确保没有任何内容与独占cpuset重叠。另外，使用Linux虚拟文件系统（vfs）来表示cpuset层次结构为cpuset提供了熟悉的权限和名称空间，并且只需要最少的额外内核代码。</p>
+<p>root cpuset（顶层）里cpus和mems文件是只读的，cpus文件通过CPU热插拔通知机制自动追踪了cpu_online_mask的值，mems文件通过cpuset_track_online_nodes回调则追踪了node_states[N_MEMORY]的值。</p>
+<h2 id="什么是独占的（exclusive）cpuset？"><a href="#什么是独占的（exclusive）cpuset？" class="headerlink" title="什么是独占的（exclusive）cpuset？"></a>什么是独占的（exclusive）cpuset？</h2><h2 id="什么是内存压力（memory-pressure）？"><a href="#什么是内存压力（memory-pressure）？" class="headerlink" title="什么是内存压力（memory_pressure）？"></a>什么是内存压力（memory_pressure）？</h2><h2 id="什么是内存分散（memory-spread）？"><a href="#什么是内存分散（memory-spread）？" class="headerlink" title="什么是内存分散（memory spread）？"></a>什么是内存分散（memory spread）？</h2><h2 id="什么是负载均衡（sched-load-balance）？"><a href="#什么是负载均衡（sched-load-balance）？" class="headerlink" title="什么是负载均衡（sched_load_balance）？"></a>什么是负载均衡（sched_load_balance）？</h2><h2 id="什么是sched-relax-domain-level？"><a href="#什么是sched-relax-domain-level？" class="headerlink" title="什么是sched_relax_domain_level？"></a>什么是sched_relax_domain_level？</h2><p>（略）</p>
+<h2 id="如何使用cpuset？"><a href="#如何使用cpuset？" class="headerlink" title="如何使用cpuset？"></a>如何使用cpuset？</h2><p>（可以直接看第二章范例…）</p>
+<h1 id="使用范例和语法"><a href="#使用范例和语法" class="headerlink" title="使用范例和语法"></a>使用范例和语法</h1><p>创建、修改、使用cpuset都可以通过cpuset虚拟文件系统来达成。</p>
+<p>mount文件系统：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># mount -t tmpfs cgroups /sys/fs/cgroup</span><br><span class="line"># mkdir /sys/fs/cgroup/cpuset</span><br><span class="line"># mount -t cgroup -o cpuset cpuset /sys/fs/cgroup/cpuset</span><br></pre></td></tr></table></figure>
+
+<p>此时，就可以在/sys/fs/cgroup/cpuset可以查看系统cpuset的树形结构，例如/sys/fs/cgroup/cpuset表示整个系统的cpuset。</p>
+<p>如果要创建新的cpuset hierarchy：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cd /sys/fs/cgroup/cpuset</span><br><span class="line"># mkdir my_cpuset</span><br></pre></td></tr></table></figure>
+
+<p>此时，在my_cpuset目录下就会找到如下文件了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># ls</span><br><span class="line">cgroup.clone_children  cpuset.memory_pressure</span><br><span class="line">cgroup.event_control   cpuset.memory_spread_page</span><br><span class="line">cgroup.procs           cpuset.memory_spread_slab</span><br><span class="line">cpuset.cpu_exclusive   cpuset.mems</span><br><span class="line">cpuset.cpus            cpuset.sched_load_balance</span><br><span class="line">cpuset.mem_exclusive   cpuset.sched_relax_domain_level</span><br><span class="line">cpuset.mem_hardwall    notify_on_release</span><br><span class="line">cpuset.memory_migrate  tasks</span><br></pre></td></tr></table></figure>
+
+<p>读取这些文件可以看到当前cpuset的信息：可以使用的CPU和内存节点，关联的进程…写这些文件则可以修改cpuset。</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Set some flags</span><br><span class="line"># /bin/echo 1 &gt; cpuset.cpu_exclusive</span><br><span class="line"></span><br><span class="line">Add some cpus:</span><br><span class="line"># /bin/echo 0-1 &gt; cpuset.cpus</span><br><span class="line"></span><br><span class="line">Add some mems:</span><br><span class="line"># /bin/echo 0 &gt; cpuset.mems</span><br><span class="line"></span><br><span class="line">Now attach your shell to this cpuset:</span><br><span class="line"># /bin/echo $$ &gt; tasks</span><br><span class="line"></span><br><span class="line">To remove all the CPUs:</span><br><span class="line"># /bin/echo &quot;&quot; &gt; cpuset.cpus        -&gt; clear cpus list</span><br></pre></td></tr></table></figure>
+
+<p>（注：</p>
+<ol>
+<li><p>cpus和mems的值需要是当前系统正在运行的CPU和内存节点范围内的值，且要是root cpuset的子集； </p>
+</li>
+<li><p>attach进程时，需要先看一下进程的status文件，里面cpus_allowed和mems_allowed值 与 cpuset的cpus和mems值 是否有交集，如果没有，则无法添加进程。</p>
+</li>
+<li><p>写一个while(1){}的进程执行，通过设置cpuset.cpu_exclusive=1和cpuset.cpus值，可以指定该进程跑在不同的CPU上。</p>
+<p>）</p>
+</li>
+</ol>
+<p>还可以通过mkdir在你的cpuset里创建新的cpuset：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># mkdir my_sub_cs</span><br></pre></td></tr></table></figure>
+
+<p>可以通过rmdir删除cpuset：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># rmdir my_sub_cs -rf</span><br></pre></td></tr></table></figure>
+
+<p>注意，如果其中有其他cpuset，或有进程与其关联，会删除失败。</p>
+<p>注：参考资料：</p>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/sec-cpuset" target="_blank" rel="noopener">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/sec-cpuset</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/29/读书笔记-罗马人的故事X·条条大路通罗马/" rel="next" title="读书笔记 | 罗马人的故事X·条条大路通罗马">
+                <i class="fa fa-chevron-left"></i> 读书笔记 | 罗马人的故事X·条条大路通罗马
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/02/翻译-【cgroups】进程数目控制器（Process-Number-Controller）/" rel="prev" title="翻译 |【cgroups】进程数目控制器（Process Number Controller）">
+                翻译 |【cgroups】进程数目控制器（Process Number Controller） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -340,6 +527,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -360,8 +551,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -437,6 +637,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Cpusets"><span class="nav-number">1.</span> <span class="nav-text">1. Cpusets</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是cpusets？"><span class="nav-number">1.1.</span> <span class="nav-text">什么是cpusets？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么需要cpuset？"><span class="nav-number">1.2.</span> <span class="nav-text">为什么需要cpuset？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cpuset如何工作？"><span class="nav-number">1.3.</span> <span class="nav-text">cpuset如何工作？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是独占的（exclusive）cpuset？"><span class="nav-number">1.4.</span> <span class="nav-text">什么是独占的（exclusive）cpuset？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是内存压力（memory-pressure）？"><span class="nav-number">1.5.</span> <span class="nav-text">什么是内存压力（memory_pressure）？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是内存分散（memory-spread）？"><span class="nav-number">1.6.</span> <span class="nav-text">什么是内存分散（memory spread）？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是负载均衡（sched-load-balance）？"><span class="nav-number">1.7.</span> <span class="nav-text">什么是负载均衡（sched_load_balance）？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是sched-relax-domain-level？"><span class="nav-number">1.8.</span> <span class="nav-text">什么是sched_relax_domain_level？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用cpuset？"><span class="nav-number">1.9.</span> <span class="nav-text">如何使用cpuset？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用范例和语法"><span class="nav-number">2.</span> <span class="nav-text">使用范例和语法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -570,6 +786,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
